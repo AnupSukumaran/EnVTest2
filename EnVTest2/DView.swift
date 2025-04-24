@@ -1,5 +1,5 @@
 //
-//  CView.swift
+//  DView.swift
 //  EnVTest2
 //
 //  Created by Sukumar.Sukumaran on 24/04/2025.
@@ -7,21 +7,17 @@
 
 import SwiftUI
 
-struct CView: View {
-   // @EnvironmentObject var nav: NavState
-    @State var navigateToD: Bool = false
+
+struct DView: View {
+    @EnvironmentObject var nav: NavState
+
     var body: some View {
         VStack {
-            Text("Screen C")
-            Button("Go to D") {
+            Text("Screen D")
+            Button("Back to A") {
                 //nav.dismissToHome = true
-                navigateToD = true
+                nav.isAtB = false
             }
-            
-            NavigationLink(
-                destination: DView(),
-                isActive: $navigateToD
-            ) { EmptyView() }
         }
 //        .onChange(of: nav.dismissToHome) { goHome in
 //            if goHome {
@@ -35,5 +31,5 @@ struct CView: View {
 }
 
 #Preview {
-    CView()
+    DView()
 }

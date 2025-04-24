@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AView: View {
     @EnvironmentObject var nav: NavState
+    @State var navigateToB: Bool = false
 
     var body: some View {
         VStack {
