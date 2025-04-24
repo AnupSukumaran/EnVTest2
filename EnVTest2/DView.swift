@@ -16,7 +16,7 @@ struct DView: View {
             Text("Screen D")
             Button("Back to A") {
                 //nav.dismissToHome = true
-                nav.isAtB = false
+                nav.fromRootToViews = false
             }
         }
 //        .onChange(of: nav.dismissToHome) { goHome in

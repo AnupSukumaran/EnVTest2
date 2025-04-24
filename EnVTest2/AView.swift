@@ -15,11 +15,11 @@ struct AView: View {
         VStack {
             Text("Screen A")
             Button("Go to B") {
-                nav.isAtB = true
+                nav.fromRootToViews = true
             }
             NavigationLink(
                 destination: BView(),
-                isActive: $nav.isAtB
+                isActive: $nav.fromRootToViews
             ) { EmptyView() }
         }
     }

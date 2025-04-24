@@ -9,9 +9,9 @@ import SwiftUI
 
 
 class NavState: ObservableObject {
-    @Published var dismissToHome: Bool = false
-    @Published var isAtB: Bool = false
-    @Published var isAtC: Bool = false
+    @Published var fromRootToViews: Bool = false
+//    @Published var isAtB: Bool = false
+//    @Published var isAtC: Bool = false
 }
 
 struct RootView: View {
