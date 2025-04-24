@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
+    let nav = NavState()  // shared nav state
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let rootView = RootView()
+           .environmentObject(nav)
+
+        // 2. Use a UIHostingController as window root
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIHostingController(rootView: rootView)
+        window.makeKeyAndVisible()
+        self.window = window
+        
         return true
     }
 
